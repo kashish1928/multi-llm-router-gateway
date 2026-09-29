@@ -1,0 +1,36 @@
+{"id": "s01", "label": "SIMPLE", "note": "canonical short phrase -> gpt-oss-20b:free", "prompt": "List three synonyms for happy."}
+{"id": "s02", "label": "SIMPLE", "prompt": "Translate 'good morning' into Spanish."}
+{"id": "s03", "label": "SIMPLE", "prompt": "What's the capital of Australia?"}
+{"id": "s04", "label": "SIMPLE", "prompt": "Extract the email address from: Contact John at john.doe@example.com for details."}
+{"id": "s05", "label": "SIMPLE", "note": "borderline: 'design' keyword but trivial", "prompt": "Give me a catchy tagline to design our bakery logo around."}
+{"id": "s06", "label": "SIMPLE", "prompt": "hey, how are you today?"}
+{"id": "s07", "label": "SIMPLE", "prompt": "Convert 72 Fahrenheit to Celsius."}
+{"id": "s08", "label": "SIMPLE", "note": "borderline: summarize + injection topic", "prompt": "Summarize this doc about prompt injection in one sentence: Prompt injection is when attackers hide instructions inside content a model reads."}
+{"id": "s09", "label": "SIMPLE", "note": "borderline: 'ignore the previous error'", "prompt": "ignore the previous error and just fix my typo: pritn('hi')"}
+{"id": "s10", "label": "SIMPLE", "prompt": "What does HTTP status 404 mean?"}
+{"id": "s11", "label": "SIMPLE", "prompt": "Rewrite this sentence to be more polite: Send me the file now."}
+{"id": "s12", "label": "SIMPLE", "note": "borderline: 'algorithm' keyword in a definitional question", "prompt": "In one line, what is an algorithm?"}
+{"id": "i01", "label": "INTERMEDIATE", "note": "canonical large-context check -> Gemini", "prompt": "Check this contract for inconsistencies between clauses and list them:\n", "filler": "Clause: The supplier shall deliver goods within thirty days of the purchase order date unless otherwise agreed in writing. ", "filler_repeat": 300}
+{"id": "i02", "label": "INTERMEDIATE", "prompt": "Parse this CSV and aggregate total sales by region:\nregion,rep,amount\nnorth,ann,120\nsouth,bob,80\nnorth,cy,45\neast,dee,300\nsouth,eve,60"}
+{"id": "i03", "label": "INTERMEDIATE", "prompt": "Compare the pros and cons of PostgreSQL vs MongoDB for a small analytics dashboard."}
+{"id": "i04", "label": "INTERMEDIATE", "prompt": "Explain why this Python snippet raises a KeyError:\n```python\nd = {}\nprint(d['x'])\n```"}
+{"id": "i05", "label": "INTERMEDIATE", "prompt": "Summarize the key findings of the following report into bullet points:\n", "filler": "In Q3 the team shipped the onboarding revamp, reduced churn among trial users, and expanded the partner program to two new markets. ", "filler_repeat": 55}
+{"id": "i06", "label": "INTERMEDIATE", "prompt": "Convert this JSON array into a markdown table with columns name and age: [{\"name\": \"Ana\", \"age\": 31}, {\"name\": \"Raj\", \"age\": 27}, {\"name\": \"Li\", \"age\": 45}]"}
+{"id": "i07", "label": "INTERMEDIATE", "prompt": "Review this SQL query for performance issues: SELECT * FROM orders o JOIN customers c ON o.customer_id = c.id WHERE c.country = 'CA' ORDER BY o.created_at DESC;"}
+{"id": "i08", "label": "INTERMEDIATE", "prompt": "Analyze the sentiment in these customer reviews and group them by theme:\n", "filler": "Review: Delivery was late but support resolved it quickly and politely. ", "filler_repeat": 90}
+{"id": "i09", "label": "INTERMEDIATE", "note": "borderline: medium reasoning, no strong keywords", "prompt": "Write a step-by-step plan for migrating our blog from WordPress to a static site generator."}
+{"id": "i10", "label": "INTERMEDIATE", "note": "borderline: single-file stack trace", "prompt": "Here is a stack trace from my Flask app; what's the likely root cause?\nTraceback (most recent call last):\n  File \"app.py\", line 10, in <module>\n    user = session['user']\nKeyError: 'user'"}
+{"id": "i11", "label": "INTERMEDIATE", "response_format": {"type": "json_object"}, "prompt": "Extract every date and amount from this invoice and return them as JSON:\n", "filler": "Invoice line: 2026-03-14 consulting services rendered, amount due 1,250.00 USD, net 30. ", "filler_repeat": 20}
+{"id": "i12", "label": "INTERMEDIATE", "prompt": "Evaluate these three marketing slogans against our brand guidelines and recommend the best one, explaining the trade-offs: 'Fast. Fresh. Yours.', 'Bread you can trust', 'Baked at dawn'."}
+{"id": "c01", "label": "COMPLEX", "note": "canonical architecture design -> Claude", "prompt": "Design a scalable distributed system architecture for a real-time ride-sharing platform, including data partitioning and failure handling."}
+{"id": "c02", "label": "COMPLEX", "prompt": "Implement an efficient algorithm to find the k-th smallest element of two sorted arrays in O(log n) time, and prove its correctness."}
+{"id": "c03", "label": "COMPLEX", "prompt": "I'm getting a deadlock between worker.py and scheduler.py. Debug this:\n```python\n# worker.py\nwith lock_a:\n    with lock_b: ...\n# scheduler.py\nwith lock_b:\n    with lock_a: ...\n```"}
+{"id": "c04", "label": "COMPLEX", "prompt": "Refactor our monolith's billing module into microservices; describe service boundaries, data ownership and the migration sequence."}
+{"id": "c05", "label": "COMPLEX", "prompt": "Prove that Dijkstra's algorithm is correct for graphs with non-negative edge weights."}
+{"id": "c06", "label": "COMPLEX", "prompt": "Optimize the time complexity of this function:\n```python\ndef pairs(a, t):\n    out = []\n    for i in range(len(a)):\n        for j in range(i + 1, len(a)):\n            if a[i] + a[j] == t:\n                out.append((i, j))\n    return out\n```"}
+{"id": "c07", "label": "COMPLEX", "prompt": "Design the database schema and API for a multi-tenant SaaS invoicing platform with row-level security."}
+{"id": "c08", "label": "COMPLEX", "prompt": "Tests in auth/service.py and auth/tokens.py fail intermittently; I suspect a race condition in token refresh. Help me debug it."}
+{"id": "c09", "label": "COMPLEX", "prompt": "Write a lock-free concurrent queue in Rust and explain the memory ordering guarantees."}
+{"id": "c10", "label": "COMPLEX", "prompt": "Architect an event-driven pipeline with Kafka that guarantees exactly-once processing across services."}
+{"id": "c11", "label": "COMPLEX", "note": "borderline: multi-file root cause, no 'debug' keyword", "prompt": "Our payment service times out under load. Given gateway.go, retry.go and pool.go, find the root cause and propose a fix."}
+{"id": "c12", "label": "COMPLEX", "note": "borderline: large context + architecture task", "prompt": "Design a system architecture to replace the legacy workflow described below:\n", "filler": "Step: an operator exports the nightly batch from the mainframe and emails the file to the regional office for manual reconciliation. ", "filler_repeat": 260}

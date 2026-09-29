@@ -216,3 +216,11 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# Gateway project additions
+.env.*
+!.env.example
+logs/
+*.jsonl
+!tests/data/*.jsonl
+.DS_Store

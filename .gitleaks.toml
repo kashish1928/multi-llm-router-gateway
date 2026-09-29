@@ -1,0 +1,7 @@
+# Extends the default gitleaks ruleset. Test fixtures use obviously fake keys.
+[extend]
+useDefault = true
+
+[allowlist]
+description = "Fake credentials used only in tests"
+paths = ['''tests/.*\.py''']
